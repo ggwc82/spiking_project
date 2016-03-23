@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-before_filter :configure_sign_up_params, only: [:create]
+# before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -8,9 +8,9 @@ before_filter :configure_sign_up_params, only: [:create]
   # end
 
   # POST /resource
-  def create
-    super
-  end
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit
@@ -36,12 +36,12 @@ before_filter :configure_sign_up_params, only: [:create]
   #   super
   # end
 
-  protected
+  # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    devise_parameter_sanitizer.for(:sign_up) << :profile_id
-  end
+  # def configure_sign_up_params
+  #   devise_parameter_sanitizer.for(:sign_up) << :profile_id
+  # end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
@@ -49,13 +49,14 @@ before_filter :configure_sign_up_params, only: [:create]
   # end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource)
-p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+#   def after_sign_up_path_for(resource)
+# p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
     
-    resource.profile << Profile.new
-    p resource
-    super(resource)
-  end
+#     # resource.profile = Profile.new
+#     # resource.save
+#     # p resource
+#     super(resource)
+#   end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
